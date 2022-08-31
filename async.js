@@ -21,15 +21,15 @@
 // ]
 
 // // output to the console after 2sec
-// // function getPosts () {
-// //     setTimeout(() => {
-// //         posts.forEach((item) => {
-// //             console.log(posts)
-// //         });
-// //     }, 2000);
-// // }
+// function getPosts () {
+//     setTimeout(() => {
+//         posts.forEach((item) => {
+//             console.log(posts)
+//         });
+//     }, 2000);
+// }
 
-// // getPosts()
+// getPosts()
 
 
 // // output to the browser after 2sec
@@ -45,7 +45,13 @@
 //     }, 3000);
 // }
 
-// getPosts()
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     getPosts()
+
+
+// })
 
 
 // // create new post
