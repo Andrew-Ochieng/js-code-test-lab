@@ -13,32 +13,34 @@ fetch(userUrl)
         }
         return res.json();
     })
-    .then((data) => {
-        console.log(data)
-
-        getUsers()
-
-    })
+    .then((users) => handleData(users))
     .catch((err) => console.log(err))
 
 
-    function getUsers(data) {
+    function handleData(users) {
+        const userList = users.data;
+        return [...userList].map((user) => createUser(user))
+    }
+
+
+    function createUser(user) {
         let userEl = document.getElementById("users")
-        data.forEach(user => {
-            userEl.innerHTML += `
+
+        userEl.innerHTML += `
             <div>
+                <img src="${user.avatar}"/>
                 <h3>${user.first_name}</h3>
                 <p>${user.email}</p>
             </div>
         `
-        });
         
     }
 
 
 // render DOM onload
 document.addEventListener("DOMContentLoaded", () => {
-    getUsers()
+    handleData()
+    createUser()
 
     
 })
